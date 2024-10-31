@@ -39,7 +39,7 @@ export default function VerticalProduct({
                 <span className="text-lg font-bold">{product?.price?.currency}{product?.price?.amount}</span>
             </div>
             <div className="flex gap-2">
-                <button className="flex-1 rounded bg-brand-tertiary px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+                <button className="flex-1 rounded bg-brand-tertiary px-4 py-2 text-sm font-medium text-white hover:bg-brand-tertiary/90">
                     View Product
                 </button>
             </div>

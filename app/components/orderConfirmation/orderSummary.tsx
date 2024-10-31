@@ -16,32 +16,30 @@ export default function OrderSummary({
                         <div className="space-y-6">
                             {orderDetails?.products?.map((product : products) => (
                                 <HorizontalProduct key={product._id} product={product}/>
-                            ))}
-                            
-                            {/* <HorizontalProduct/> */}
+                            ))}                            
                         </div>
                     </div>
                 </div> 
 
                 <div className="mt-6 lg:mt-0 lg:w-1/3">
-                <div className="space-y-2 border-t pt-6 lg:border-t-0 lg:pt-0">
-                    <div className="flex justify-between text-sm">
-                    <span>Subtotal:</span>
-                    <span>R{orderDetails?.orderSubtotal?.amount}</span>
+                    <div className="space-y-2 border-t pt-6 lg:border-t-0 lg:pt-0">
+                        <div className="flex justify-between text-sm">
+                            <span>Subtotal:</span>
+                            <span>R{orderDetails?.orderSubtotal?.amount}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                            <span>delivery Charge:</span>
+                            <span>R{orderDetails?.deliveryCharge?.amount}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                            <span>Tax:</span>
+                            <span>R{orderDetails?.totalTax?.amount}</span>
+                        </div>
+                        <div className="flex justify-between font-medium border-t pt-2 mt-4">
+                            <span>Order Total:</span>
+                            <span className="text-red-600">R{orderDetails?.total?.amount}</span>
+                        </div>
                     </div>
-                    <div className="flex justify-between text-sm">
-                    <span>delivery Charge:</span>
-                    <span>R{orderDetails?.deliveryCharge?.amount}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                    <span>Tax:</span>
-                    <span>R{orderDetails?.totalTax?.amount}</span>
-                    </div>
-                    <div className="flex justify-between font-medium">
-                    <span>Order Total:</span>
-                    <span className="text-red-600">R{orderDetails?.total?.amount}</span>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
