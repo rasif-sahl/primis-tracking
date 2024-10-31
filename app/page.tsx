@@ -29,6 +29,9 @@ export default function Home() {
     return <div>{error}</div>;
   }
 
+  {console.log(orders)}
+
+
   return (
     <div className="mx-auto">
       <div className="mb-8">
@@ -42,7 +45,7 @@ export default function Home() {
       </div>
 
       {/* Summary */}
-      <OrderConfirmationBreadcrumb/>
+      <OrderConfirmationBreadcrumb customer={orders?.order?.customer}/>
 
       {/* Product List */}
       <OrderSummary/>

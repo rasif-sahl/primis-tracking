@@ -4,3 +4,12 @@ export interface OrderTracking {
     campaign(campaign: any): unknown;
     shipment: Boolean
 }
+
+interface Customer {
+    firstName: string;
+    secondName: string;
+}
+
+export interface OrderConfirmationBreadcrumbInterface {
+    customer: Customer;
+}
