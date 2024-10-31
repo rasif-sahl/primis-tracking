@@ -1,7 +1,7 @@
 export interface OrderTracking {
     customHtml(customHtml: any): unknown;
     order: any;
-    campaign(campaign: any): unknown;
+    campaign: any;
     shipment: Boolean
 }
 

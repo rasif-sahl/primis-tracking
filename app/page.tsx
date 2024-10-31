@@ -51,7 +51,7 @@ export default function Home() {
       <OrderSummary orderDetails={orders?.order}/>
 
       {/* Product Recommendations */}
-      <ProductRecommendations/>
+      <ProductRecommendations recommendations={orders?.campaign?.productRecommendations}/>
     </div>
   );
 }
