@@ -48,7 +48,7 @@ export default function Home() {
       <OrderConfirmationBreadcrumb customer={orders?.order?.customer}/>
 
       {/* Product List */}
-      <OrderSummary/>
+      <OrderSummary orderDetails={orders?.order}/>
 
       {/* Product Recommendations */}
       <ProductRecommendations/>
