@@ -15,13 +15,13 @@ For this you can use `nvm - node version manager`
 
 ## Getting Started
 
-> Please make sure you are using node js `v20.5.1` or higher. I am used node js `v22.3.0` for this project
+> Please make sure you are using node js `v20.5.1` or higher. I am using node js `v22.3.0` for this project
 
 - Clone the project - `git clone https://github.com/rasif-sahl/primis-tracking.git`
 - Then run - `cd primis-tracking`
-- To install the dependencies - `npm install`
-- Copy the attributes in the `env-example` file.
-- Create `.env` file and then add the copied attributes here and replace them with your own values.
+- To install the dependencies run - `npm install`
+- Copy the variable in the `env-example` file.
+- Create `.env` file and then add the copied variable here and replace them with your own values.
 - To run the project - `npm run dev`
 - Then click on this link - [http://localhost:3000](http://localhost:3000) 
 
@@ -38,7 +38,7 @@ For this you can use `nvm - node version manager`
 - I have used `next js` with `tailwind css` to develop this project.
 - I have added the brand colors in the `tailwind.config.ts` file and access it globally.
 - I have defined this `https://cdn11.bigcommerce.com/` in the `next.config.ts` file to access the images.
-- In this project I have worked oin the `Responsive design` with specific break points.
+- In this project I have worked on the `Responsive design` with specific break points.
 - I have added `not-found.tsx` page as well ( This page is also `Responsive`).
 - I have added a preloader and if an wrong `order id` is been passed an error message will be displayed.
 
