@@ -35,7 +35,9 @@ For this you can use `nvm - node version manager`
 - I have used `next js` with `tailwind css` to develop this project.
 - I have added the brand colors in the `tailwind.config.ts` file and access it globally.
 - I have defined this `https://cdn11.bigcommerce.com/` in the `next.config.ts` file to access the images.
-- In this project I have worked oin the `Responsive design` with specific break points..
+- In this project I have worked oin the `Responsive design` with specific break points.
+- I have added `not-found.tsx` page as well ( This page is also `Responsive`).
+- I have added a preloader and if an wrong `order id` is been passed an error message will be displayed.
 
 ## File Structure
 
