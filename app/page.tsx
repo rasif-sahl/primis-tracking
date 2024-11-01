@@ -15,7 +15,7 @@ export default function Home() {
     const fetchOrderTracking = async () => {
       try {
         const response = await getOrderTracking();
-        setOrders(response); // Save the API response in the state
+        setOrders(response);
       } catch (err) {
         setError("Failed to load user data.");
         console.error(err);
@@ -28,9 +28,6 @@ export default function Home() {
   if (error) {
     return <div>{error}</div>;
   }
-
-  {console.log(orders)}
-
 
   return (
     <div className="mx-auto">
