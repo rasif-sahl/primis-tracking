@@ -1,7 +1,8 @@
-// "use client";
+"use client";
 import { products } from "@/store/interface";
 import Image from "next/image";
 import { useState } from "react";
+import CustomButton from "../button"
 
 export default function VerticalProduct({
     product,
@@ -28,7 +29,7 @@ export default function VerticalProduct({
             <div className="relative mb-3 pt-[100%]">
                 <Image
                     src={src}
-                    alt="CHUNKY KNIT CASHMERE CARDIGAN"
+                    alt={product?.name || ''}
                     fill
                     className="absolute left-0 top-0 h-full w-full object-contain"
                     onError={() => setSrc("/images/default.png")}
@@ -39,9 +40,7 @@ export default function VerticalProduct({
                 <span className="text-lg font-bold">{product?.price?.currency}{product?.price?.amount}</span>
             </div>
             <div className="flex gap-2">
-                <button className="flex-1 rounded bg-brand-tertiary px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
-                    View Product
-                </button>
+                <CustomButton text="View Product" />
             </div>
         </div>
     );

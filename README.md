@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Primis Tracking
+
+<div align="center">
+    <img src="/public/demo.png" >
+</div>
+
+## Requirements
+
+- Node - `v22.3.0`
+- Next js - `15.0.2`
+
+Please try to use a node version `v20.5.1` or something higher than this because in next js 15 older versions of node could give some unexpected errors.
+
+For this you can use `nvm - node version manager`
 
 ## Getting Started
 
-First, run the development server:
+- Clone the project - `git clone https://github.com/rasif-sahl/primis-tracking.git`
+- To install the dependencies - `npm install`
+- Copy the attributes in the `env-example` file.
+- Create `.env` file and then add the copied attributes here and replace them with your own values.
+- To run the project - `npm run dev`
+- Then click on this link - [http://localhost:3000](http://localhost:3000) 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Notes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Images that was coming from this link `https://cdn11.bigcommerce.com/` was been redirected to a `not found` page.
+- In the ordered product list I was getting only one products and it is `[Sample] Able Brewing System`.
+- The banner image was selected according to this product.
+- And in the summary the product list height is been fixed if it exceeds more than 03 products it will start scrolling.
+- The currency was been returned in both `R` and `ZAR` so in the order summary I added `R` by default and in the recommended products I am displaying the value thats been returned in the payload.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- I have used next js with tailwind css to develop this project.
+- I have added the brand colors in the `tailwind.config.ts` file and access it globally.
+- I have defined this `https://cdn11.bigcommerce.com/` in the `next.config.ts` file to access the images.
+- In this project I have worked oin the `Responsive design` with specific break points..
 
-## Learn More
+## File Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Folder | Contents
+-------|---------
+`app` | All the files related to the front-end. every file or folder that has `page.tsx` defines a route.
+`app/components` | All the reusable components and common components related to specific pages are here..
+`app/components/orderConfirmation` | Components related to the order confirmation screen. (Helps to keep the order confirmation page clean) 
+`app/components/ui` | All the reusable components are here.
+`public/` | This works from the root and also it holds the static assets of this project like `images`.
+`store` | This holds all the reusable functions, libraries, interfaces and requests..
+`store/interface` | Because this project uses `typescript` to define the type of the object interfaces are been used.
+`store/lib` | This is mostly been used to have utility functions helper functions and etc...
+`store/requests` | This folder is used to manege all the API calls in a single place.
+`env-example` | All the environment variable name are been added here.
