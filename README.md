@@ -15,7 +15,10 @@ For this you can use `nvm - node version manager`
 
 ## Getting Started
 
+> Please make sure you are using node js `v20.5.1` or higher. I am used node js `v22.3.0` for this project
+
 - Clone the project - `git clone https://github.com/rasif-sahl/primis-tracking.git`
+- Then run - `cd primis-tracking`
 - To install the dependencies - `npm install`
 - Copy the attributes in the `env-example` file.
 - Create `.env` file and then add the copied attributes here and replace them with your own values.
