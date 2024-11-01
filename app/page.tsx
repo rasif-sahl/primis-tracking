@@ -11,15 +11,18 @@ import ErrorBreadcrumb from "./components/ui/errorBreadCrumb";
 export default function Home() {
   const [orders, setOrders] = useState<OrderTracking | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchOrderTracking = async () => {
+      setLoading(true);
       try {
         const response = await getOrderTracking();
         setOrders(response);
       } catch (err) {
         setError("Failed to load order tracking data.");
-        console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -38,7 +41,17 @@ export default function Home() {
         />
       </div>
 
-      {error ? 
+      { loading ? (
+        <div className="flex justify-center items-center mt-20">
+          <Image
+            src="/images/loading.jpg"
+            alt="Loading..."
+            width={50}
+            height={50}
+            className="animate-spin"
+          />
+        </div>
+      ) : error ? 
         <div>
           <ErrorBreadcrumb error={error}/>
         </div>
