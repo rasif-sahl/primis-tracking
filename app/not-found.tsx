@@ -8,7 +8,7 @@ export default function NotFound() {
             <div className="rounded-lg bg-white p-8 shadow-md">
                 <div className="mb-8 text-center">
                     <h1 className="mb-4 text-5xl font-bold text-brand-secondary">404</h1>
-                    <p className="mb-6 text-xl text-gray-600">Oops! Page not found</p>
+                    <p className="mb-6 text-xl text-brand-secondary">Oops! Page not found</p>
                     <Image
                         src="/images/notFound.jpg"
                         alt="Lost dog illustration"
@@ -16,7 +16,7 @@ export default function NotFound() {
                         height={200}
                         className="mx-auto mb-6"
                     />
-                    <p className="mb-8 text-gray-600">
+                    <p className="mb-8 text-brand-secondary">
                         It seems like we can't fetch the page you're looking for.
                     </p>
                     <Link
@@ -28,7 +28,7 @@ export default function NotFound() {
                 </div>
             </div>
             
-            <div className="mt-8 text-center text-sm text-gray-600">
+            <div className="mt-8 text-center text-sm text-brand-secondary">
                 <p>Developed By Rasif Sahl.</p>
             </div>
         </div>

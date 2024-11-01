@@ -9,7 +9,7 @@ export default function OrderSummary({
 }) {
     return (
         <div className="rounded-lg bg-white p-6 shadow-md">
-            <h2 className="mb-4 text-2xl font-semibold uppercase text-gray-600">Order Summary</h2>
+            <h2 className="mb-4 text-2xl font-semibold uppercase text-brand-tertiary">Order Summary</h2>
             <div className="lg:flex lg:gap-8">
                 <div className="lg:w-2/3 lg:border-r lg:pr-8">
                     <div className="max-h-96 overflow-y-auto pr-4">
