@@ -6,6 +6,7 @@ import ProductRecommendations from "./components/orderConfirmation/recommendatio
 import OrderConfirmationBreadcrumb from "./components/orderConfirmation/breadCrumb";
 import { useEffect, useState } from "react";
 import { OrderTracking } from "@/store/interface/index";
+import ErrorBreadcrumb from "./components/ui/errorBreadCrumb";
 
 export default function Home() {
   const [orders, setOrders] = useState<OrderTracking | null>(null);
@@ -17,17 +18,13 @@ export default function Home() {
         const response = await getOrderTracking();
         setOrders(response);
       } catch (err) {
-        setError("Failed to load user data.");
+        setError("Failed to load order tracking data.");
         console.error(err);
       }
     };
 
     fetchOrderTracking();
   }, []);
-
-  if (error) {
-    return <div>{error}</div>;
-  }
 
   return (
     <div className="mx-auto">
@@ -41,14 +38,17 @@ export default function Home() {
         />
       </div>
 
-      {/* Summary */}
-      <OrderConfirmationBreadcrumb customer={orders?.order?.customer}/>
-
-      {/* Product List */}
-      <OrderSummary orderDetails={orders?.order}/>
-
-      {/* Product Recommendations */}
-      <ProductRecommendations recommendations={orders?.campaign?.productRecommendations}/>
+      {error ? 
+        <div>
+          <ErrorBreadcrumb error={error}/>
+        </div>
+      :
+        <>
+          <OrderConfirmationBreadcrumb customer={orders?.order?.customer}/>
+          <OrderSummary orderDetails={orders?.order}/>
+          <ProductRecommendations recommendations={orders?.campaign?.productRecommendations}/>
+        </>
+      }
     </div>
   );
 }

@@ -1,6 +1,8 @@
 # Primis Tracking
 
-<hr/>
+<div align="center">
+    <img src="/public/demo.png" >
+</div>
 
 ## Requirements
 
