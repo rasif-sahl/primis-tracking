@@ -25,7 +25,6 @@ export async function fetchFromAPI<T>(endpoint: string, options: RequestOptions 
     const data: T = await response.json();
     return data;
   } catch (error) {
-    console.error("API error:", error);
     throw new Error("Failed to fetch data. Please try again later.");
   }
 }
