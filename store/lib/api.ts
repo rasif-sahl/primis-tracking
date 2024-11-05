@@ -1,17 +1,12 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-
 interface RequestOptions extends RequestInit {
   headers?: Record<string, string>;
 }
 
 export async function fetchFromAPI<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
   try {
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+    const response = await fetch(endpoint, {
       ...options,
       headers: {
-        // Authorization: `Bearer ${API_KEY}`,
-        Authorization: `${API_KEY}`,
         "Content-Type": "application/json",
         ...options.headers,
       },
