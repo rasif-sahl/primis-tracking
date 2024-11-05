@@ -21,9 +21,7 @@ export default function dynamicPage () {
         const fetchOrderTracking = async () => {
           setLoading(true);
           try {
-            const response = await getOrdersDynamically({
-                orderId: id || '',
-            });
+            const response = await getOrdersDynamically(String(id) || '');
             setOrders(response);
           } catch (err) {
             setError("Failed to load order tracking data.");
