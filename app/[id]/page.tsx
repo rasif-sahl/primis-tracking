@@ -3,14 +3,14 @@ import { useParams } from 'next/navigation';
 import { getOrdersDynamically } from "@/store/requests/orders";
 import { useEffect, useState } from "react";
 import { OrderTracking } from "@/store/interface";
-import {getOrderTracking} from "@/store/requests/orders";
+// import {getOrderTracking} from "@/store/requests/orders";
 import Image from "next/image";
 import OrderSummary from "../components/orderConfirmation/orderSummary";
 import ProductRecommendations from "../components/orderConfirmation/recommendations";
 import OrderConfirmationBreadcrumb from "../components/orderConfirmation/breadCrumb";
 import ErrorBreadcrumb from "../components/ui/errorBreadCrumb";
 
-export default function dynamicPage () {
+export default function DynamicPage () {
     const params = useParams();
     const id = params.id;
     const [orders, setOrders] = useState<OrderTracking | null>(null);
@@ -24,7 +24,7 @@ export default function dynamicPage () {
             const response = await getOrdersDynamically(String(id) || '');
             setOrders(response);
           } catch (err) {
-            setError("Failed to load order tracking data.");
+            setError(`Failed to load order tracking data. ${err}`);
           } finally {
             setLoading(false);
           }

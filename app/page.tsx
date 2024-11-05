@@ -20,7 +20,7 @@ export default function Home() {
         const response = await getOrderTracking();
         setOrders(response);
       } catch (err) {
-        setError("Failed to load order tracking data.");
+        setError(`Failed to load order tracking data. ${err}`);
       } finally {
         setLoading(false);
       }

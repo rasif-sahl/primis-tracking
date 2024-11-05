@@ -17,7 +17,7 @@ export default function NotFound() {
                         className="mx-auto mb-6"
                     />
                     <p className="mb-8 text-brand-secondary">
-                        It seems like we can't fetch the page you're looking for.
+                        It seems like we cant fetch the page you are looking for.
                     </p>
                     <Link
                         href="/"
